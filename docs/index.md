@@ -19,7 +19,7 @@ This playbook assumes the following:
 
 Below is a highlevel diagram how the ocp4-helpernode fits into your network.
 
-![ocp4-helpernode](docs/images/hn.png)
+![ocp4-helpernode](images/hn.png)
 
 
 It's important to note that you can delegate DNS to this ocp4-helpernode if you don't want to use it as your main DNS server. You will have to delegate `$CLUSTERID.$DOMAIN` to this helper node.
@@ -42,7 +42,7 @@ Install a CentOS 7 or CentOS 8 server with this recommended setup:
 * 30GB HD
 * Static IP
 
-There is a sample kickstart file for [EL 7](docs/examples/helper-ks.cfg) and [EL 8](docs/examples/helper-ks8.cfg) that is used during testing, if you'd like to automate the initial install of the OS.
+There is a sample kickstart file for [EL 7](examples/helper-ks.cfg) and [EL 8](examples/helper-ks8.cfg) that is used during testing, if you'd like to automate the initial install of the OS.
 
 Once the base OS is installed, install [EPEL](https://fedoraproject.org/wiki/EPEL)
 
@@ -60,7 +60,7 @@ cd ocp4-helpernode
 
 ## Setup your Environment Vars
 
-Inside that dir there is a [vars.yaml](docs/examples/vars.yaml) file under `docs/examples/var.yaml` ... **__modify it__** to match your network and the environment. (the example one assumes a `/24`)
+Inside that dir there is a [vars.yaml](examples/vars.yaml) file under `docs/examples/var.yaml` ... **__modify it__** to match your network and the environment. (the example one assumes a `/24`)
 
 ```
 cp docs/examples/vars.yaml .
@@ -68,7 +68,7 @@ cp docs/examples/vars.yaml .
 
 > :warning: **NOTE**, currently this playbook assumes/is limited to a `/24` network
 
-See the `vars.yaml` [documentation page](docs/vars-doc.md) for more info about what you can define. There are different options, depending on what you're doing. For example, if you're doing a static ip install vs a dhcp install.
+See the `vars.yaml` [documentation page](vars-doc.md) for more info about what you can define. There are different options, depending on what you're doing. For example, if you're doing a static ip install vs a dhcp install.
 
 
 ## Run the playbook
@@ -97,15 +97,15 @@ Now you're ready to follow the [OCP4 UPI install doc](https://docs.openshift.com
 The following are quickstarts. These are written using libvirt, but are generic enough to be used in BareMetal or other Virtualized Environments.
 
 
-* Bare Metal DHCP install [quickstart](docs/bmquickstart.md)
-* Bare Metal Static IPs install [quickstart](docs/bmquickstart-static.md)
-* Libvirt DHCP install [quickstart](docs/quickstart.md)
-* Libvirt Static IPs install [quickstart](docs/quickstart-static.md)
-* DHCP install on KVM/Power [quickstart](docs/quickstart-ppc64le.md)
-* DHCP install on PowerVM [quickstart](docs/quickstart-powervm.md)
+* Bare Metal DHCP install [quickstart](bmquickstart.md)
+* Bare Metal Static IPs install [quickstart](bmquickstart-static.md)
+* Libvirt DHCP install [quickstart](quickstart.md)
+* Libvirt Static IPs install [quickstart](quickstart-static.md)
+* DHCP install on KVM/Power [quickstart](quickstart-ppc64le.md)
+* DHCP install on PowerVM [quickstart](quickstart-powervm.md)
 * OCP4 on VMware vSphere UPI Automation [quickstart](https://github.com/RedHatOfficial/ocp4-vsphere-upi-automation)
-* A Video "how-to" done on a [Twitch Stream](docs/yt-twitch.md)
+* A Video "how-to" done on a [Twitch Stream](yt-twitch.md)
 
 # Contributing
 
-Please see the [contributing doc](docs/contribute.md) for more details.
+Please see the [contributing doc](contribute.md) for more details.
